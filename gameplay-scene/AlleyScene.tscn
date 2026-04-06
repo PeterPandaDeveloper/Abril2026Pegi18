@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1xy48bh511jv"]
+
+[ext_resource type="Script" uid="uid://dm62m2vcb4y12" path="res://gameplay-scene/alley_scene.gd" id="1_gbnpt"]
+
+[node name="AlleyScene" type="Node2D"]
+script = ExtResource("1_gbnpt")

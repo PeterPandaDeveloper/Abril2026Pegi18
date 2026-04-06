@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdkw5bs868c38"]
+
+[ext_resource type="Script" uid="uid://cqanx1q6y76sy" path="res://gameplay-scene/bar_scene.gd" id="1_omsxj"]
+[ext_resource type="Texture2D" uid="uid://buv2uae1x45m6" path="res://assets/images/fondos/fondo_bar.webp" id="2_ne0ob"]
+
+[node name="BarScene" type="Node2D"]
+script = ExtResource("1_omsxj")
+
+[node name="FondoBar" type="Sprite2D" parent="."]
+position = Vector2(944, 545.5)
+scale = Vector2(0.68110794, 0.7063802)
+texture = ExtResource("2_ne0ob")
