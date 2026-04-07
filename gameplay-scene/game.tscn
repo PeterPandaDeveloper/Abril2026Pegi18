@@ -294,7 +294,7 @@ theme_override_fonts/font = ExtResource("2_sviuc")
 theme_override_font_sizes/font_size = 25
 text = "EXIT"
 
-[node name="BarraSalida" type="ProgressBar" parent="."]
+[node name="BarraViaje" type="ProgressBar" parent="."]
 layout_mode = 0
 offset_right = 4.0
 offset_bottom = 27.0

@@ -1,6 +1,57 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1xy48bh511jv"]
+[gd_scene load_steps=3 format=3 uid="uid://c1xy48bh511jv"]
 
 [ext_resource type="Script" uid="uid://dm62m2vcb4y12" path="res://gameplay-scene/alley_scene.gd" id="1_gbnpt"]
+[ext_resource type="Texture2D" uid="uid://dtikmopfa08wk" path="res://assets/images/fondos/fondo_callejon.webp" id="2_waojy"]
 
 [node name="AlleyScene" type="Node2D"]
 script = ExtResource("1_gbnpt")
+
+[node name="FondoCallejon" type="Sprite2D" parent="."]
+position = Vector2(962.5, 533)
+scale = Vector2(0.68572444, 0.69401044)
+texture = ExtResource("2_waojy")
+
+[node name="Pos1" type="Marker2D" parent="."]
+position = Vector2(693, 236)
+
+[node name="Pos2" type="Marker2D" parent="."]
+position = Vector2(834, 241)
+
+[node name="Pos3" type="Marker2D" parent="."]
+position = Vector2(978, 248)
+
+[node name="Pos4" type="Marker2D" parent="."]
+position = Vector2(693, 364)
+
+[node name="Pos5" type="Marker2D" parent="."]
+position = Vector2(834, 366)
+
+[node name="Pos6" type="Marker2D" parent="."]
+position = Vector2(973, 368)
+
+[node name="Pos7" type="Marker2D" parent="."]
+position = Vector2(688, 498)
+
+[node name="Pos8" type="Marker2D" parent="."]
+position = Vector2(841, 498)
+
+[node name="Pos9" type="Marker2D" parent="."]
+position = Vector2(964, 498)
+
+[node name="Pos10" type="Marker2D" parent="."]
+position = Vector2(698, 621)
+
+[node name="Pos11" type="Marker2D" parent="."]
+position = Vector2(839, 621)
+
+[node name="Pos12" type="Marker2D" parent="."]
+position = Vector2(971, 621)
+
+[node name="Pos13" type="Marker2D" parent="."]
+position = Vector2(695, 748)
+
+[node name="Pos14" type="Marker2D" parent="."]
+position = Vector2(839, 748)
+
+[node name="Pos15" type="Marker2D" parent="."]
+position = Vector2(976, 753)

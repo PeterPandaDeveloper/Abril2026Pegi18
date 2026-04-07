@@ -10,3 +10,7 @@ script = ExtResource("1_omsxj")
 position = Vector2(944, 545.5)
 scale = Vector2(0.68110794, 0.7063802)
 texture = ExtResource("2_ne0ob")
+
+[node name="BarraViaje" type="ProgressBar" parent="."]
+offset_right = 4.0
+offset_bottom = 27.0
