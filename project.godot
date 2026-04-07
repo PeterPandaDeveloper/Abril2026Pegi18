@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://Global.gd"
 MenuPausa="*res://gameplay-scene/MenuPausa.tscn"
+Transicion="*res://gameplay-scene/Transicion.tscn"
 
 [display]
 
@@ -38,4 +39,4 @@ version_control/autoload_on_startup=true
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.101961, 0.101961, 0.101961, 1)
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

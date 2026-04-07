@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcan5m0ruo4jb"]
+
+[ext_resource type="FontFile" uid="uid://cpwm7d3lrhrkk" path="res://assets/PixelifySans-Regular.ttf" id="1_rk7be"]
+[ext_resource type="Script" uid="uid://ogle2sdykkn5" path="res://gameplay-scene/transicion.gd" id="1_xla3g"]
+
+[node name="Transicion" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_xla3g")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_right = 1915.0
+offset_bottom = 1091.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0.047058824, 0.047058824, 0.050980393, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 2.0
+offset_top = -5.0
+offset_right = 1912.0
+offset_bottom = 1097.0
+theme_override_fonts/font = ExtResource("1_rk7be")
+theme_override_font_sizes/font_size = 150
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

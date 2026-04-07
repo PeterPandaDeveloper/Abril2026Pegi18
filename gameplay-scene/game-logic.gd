@@ -47,11 +47,12 @@ func _process(delta):
 			hold_s += delta
 			$BarraSalida.value = (hold_s / 0.8) * 100
 			if hold_s >= 0.8:
+				# ¡AQUÍ ESTÁ EL ARREGLO! La ruta completa:
 				get_tree().change_scene_to_file("res://gameplay-scene/BarScene.tscn")
 		else:
 			hold_s = 0.0
 			$BarraSalida.value = 0
-	
+			
 func _on_hit_pressed():
 	$PlayerHitMarker.visible = true
 	generate_card("player")
@@ -241,7 +242,7 @@ func playerDraw():
 
 func _on_exit_pressed():
 	get_tree().change_scene_to_file("res://gameplay-scene/BarScene.tscn")
-
+	
 func _on_replay_pressed():
 	get_tree().change_scene_to_file("res://gameplay-scene/game.tscn")
 
