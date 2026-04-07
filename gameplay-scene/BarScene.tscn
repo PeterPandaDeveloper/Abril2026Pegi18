@@ -1,7 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdkw5bs868c38"]
+[gd_scene load_steps=5 format=3 uid="uid://cdkw5bs868c38"]
 
 [ext_resource type="Script" uid="uid://cqanx1q6y76sy" path="res://gameplay-scene/bar_scene.gd" id="1_omsxj"]
 [ext_resource type="Texture2D" uid="uid://buv2uae1x45m6" path="res://assets/images/fondos/fondo_bar.webp" id="2_ne0ob"]
+[ext_resource type="FontFile" uid="uid://cpwm7d3lrhrkk" path="res://assets/PixelifySans-Regular.ttf" id="3_4011l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4011l"]
+bg_color = Color(0.78039217, 0.49019608, 0.23529412, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8509804, 0.18039216, 0.4392157, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
 
 [node name="BarScene" type="Node2D"]
 script = ExtResource("1_omsxj")
@@ -12,5 +27,24 @@ scale = Vector2(0.68110794, 0.7063802)
 texture = ExtResource("2_ne0ob")
 
 [node name="BarraViaje" type="ProgressBar" parent="."]
-offset_right = 4.0
-offset_bottom = 27.0
+offset_left = 324.0
+offset_top = 952.0
+offset_right = 1602.0
+offset_bottom = 1029.0
+theme_override_fonts/font = ExtResource("3_4011l")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/fill = SubResource("StyleBoxFlat_4011l")
+show_percentage = false
+
+[node name="Label" type="Label" parent="BarraViaje"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_4011l")
+theme_override_font_sizes/font_size = 55
+text = "Desplazándose..."
+horizontal_alignment = 1
+vertical_alignment = 1

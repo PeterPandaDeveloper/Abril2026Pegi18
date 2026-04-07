@@ -1,7 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1xy48bh511jv"]
+[gd_scene load_steps=5 format=3 uid="uid://c1xy48bh511jv"]
 
 [ext_resource type="Script" uid="uid://dm62m2vcb4y12" path="res://gameplay-scene/alley_scene.gd" id="1_gbnpt"]
 [ext_resource type="Texture2D" uid="uid://dtikmopfa08wk" path="res://assets/images/fondos/fondo_callejon.webp" id="2_waojy"]
+[ext_resource type="FontFile" uid="uid://cpwm7d3lrhrkk" path="res://assets/PixelifySans-Regular.ttf" id="3_opsd1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ttmn"]
+bg_color = Color(0.78039217, 0.49019608, 0.23529412, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8509804, 0.18039216, 0.4392157, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 5
 
 [node name="AlleyScene" type="Node2D"]
 script = ExtResource("1_gbnpt")
@@ -55,3 +70,26 @@ position = Vector2(839, 748)
 
 [node name="Pos15" type="Marker2D" parent="."]
 position = Vector2(976, 753)
+
+[node name="BarraViaje" type="ProgressBar" parent="."]
+offset_left = 324.0
+offset_top = 952.0
+offset_right = 1602.0
+offset_bottom = 1029.0
+theme_override_fonts/font = ExtResource("3_opsd1")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/fill = SubResource("StyleBoxFlat_7ttmn")
+show_percentage = false
+
+[node name="Label" type="Label" parent="BarraViaje"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_opsd1")
+theme_override_font_sizes/font_size = 55
+text = "Desplazándose..."
+horizontal_alignment = 1
+vertical_alignment = 1

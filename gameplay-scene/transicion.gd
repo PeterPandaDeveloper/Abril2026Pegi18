@@ -1,33 +1,34 @@
 extends CanvasLayer
 
 @onready var fondo = $ColorRect
-@onready var texto = $Label
 var en_progreso = false
 
 func _ready():
-	fondo.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	layer = 100 
+	fondo.set_anchors_preset(Control.PRESET_FULL_RECT)
+	fondo.color = Color.BLACK 
+	fondo.hide()
 
-func cambiar_escena(ruta: String, mensaje: String):
+# Mantenemos la palabra "mensaje" en el código para no tener que 
+# ir a borrarla en todos tus otros scripts, pero simplemente la ignoramos.
+func cambiar_escena(ruta: String, mensaje: String = ""):
 	if en_progreso: 
 		return
-		
 	en_progreso = true
-	texto.text = mensaje
 	
-	# FADE IN (Oscurecer)
-	var tween_in = create_tween().set_parallel(true)
-	tween_in.tween_property(fondo, "modulate:a", 1.0, 0.5)
-	tween_in.tween_property(texto, "modulate:a", 1.0, 0.5)
-	await tween_in.finished
+	# 1. PANTALLA NEGRA INSTANTÁNEA
+	fondo.show()
 	
-	# CAMBIO DE ESCENA
+	# 2. ESPERAMOS SOLO MEDIO SEGUNDO (Ya no hay texto que leer)
+	await get_tree().create_timer(0.5).timeout
+	
+	# 3. CAMBIO DE ESCENA
 	get_tree().change_scene_to_file(ruta)
+	
+	# 4. MICRO-PAUSA DE CARGA
 	await get_tree().create_timer(0.2).timeout
 	
-	# FADE OUT (Aclarar)
-	var tween_out = create_tween().set_parallel(true)
-	tween_out.tween_property(fondo, "modulate:a", 0.0, 0.5)
-	tween_out.tween_property(texto, "modulate:a", 0.0, 0.5)
-	await tween_out.finished
+	# 5. APAGAR PANTALLA NEGRA
+	fondo.hide()
 	
 	en_progreso = false

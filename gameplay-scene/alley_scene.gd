@@ -119,12 +119,34 @@ func generar_tienda():
 		imagen.position = marcador.position - (imagen.custom_minimum_size / 2)
 		
 		add_child(imagen)
+		
+# Opcional: si no tenías la variable de tiempo declarada arriba con las demás, añádela:
+var tiempo_viaje: float = 0.8
 
 func _process(delta):
-	# Si tienes la BarraViaje, su lógica va aquí
+	# --- ESCUDO ANTI-REPETICIÓN ---
+	# Si ya estamos viajando, la barra se congela en 100 y evitamos que Godot haga cosas raras
+	if Transicion.en_progreso:
+		if has_node("BarraViaje"):
+			$BarraViaje.value = 100
+		return 
+		
+	var moviendo = false
+	
+	# SALIR DEL CALLEJÓN Y VOLVER AL BAR (Tecla D)
 	if Input.is_key_pressed(KEY_D):
 		hold_d += delta
-		if hold_d >= 0.8:
-			get_tree().change_scene_to_file("res://gameplay-scene/BarScene.tscn")
+		moviendo = true
+		if hold_d >= tiempo_viaje:
+			hold_d = 0.0 # Reiniciamos contador
+			Transicion.cambiar_escena("res://gameplay-scene/BarScene.tscn")
 	else:
 		hold_d = 0.0
+		
+	# CONTROL MÁGICO DE LA BARRA AMARILLA
+	if has_node("BarraViaje"):
+		$BarraViaje.visible = moviendo
+		if hold_d > 0:
+			$BarraViaje.value = (hold_d / tiempo_viaje) * 100
+		else:
+			$BarraViaje.value = 0
